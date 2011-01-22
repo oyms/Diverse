@@ -1,0 +1,117 @@
+html {
+	overflow-y: scroll;
+}
+body {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+}
+td {
+	font-size: x-small;
+}
+.topOfForm {
+	
+}
+legend {
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.whiteback {
+	background-color: #FFFF00;
+	background-image: none;
+}
+.smallCenteredText {
+	font-size: xx-small;
+	text-align: center;
+}
+.serifOldstyle {
+	font-family: Georgia, Palatino, "Times New Roman", Times, serif;
+	
+}
+.otherTeam {
+	color: #666666;
+}
+.innrammetTekst {
+	padding: 2 px;
+	font-weight: bold;
+	background-color: #FBFBFB;
+}
+.currentMessage {
+
+}
+.notCurrentMessage {
+	color:#666699;
+}
+.importantMessage {
+	color: #FF0000;	
+}
+.collapseSymbol {
+	font-weight: bold;
+	text-decoration: none;
+}
+.messageFromTrainer {
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.playerBox {
+	border: none;
+}
+.playerNumber {
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(images/DraktIkon.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.currentMessageCell {
+	font-size: medium;
+	border: thin solid #CCCCCC;
+	padding: 20px;
+}
+.otherMessageCell {
+	font-size: medium;
+	border: thin dotted #E4E4E4;
+	padding: 20px;
+	color: #666666;
+}
+#importantMessageCell {
+	border: #FF0000;
+}
+.eventList {
+	font-size: 12px;
+}
+.cancelledEventInList{
+	text-decoration:line-through;
+}
+.EventOtherTeam{
+	color: #0033FF;	
+}
+.smallText{
+	font-size: smaller;
+}
+.verySmallText{
+	font-size: 9px;
+}
+.normalText{
+	font-size: 14px;
+}
+.lightColoredBackground {
+	background-color: #FFFF99;
+	background-image: none;
+}
+.jegkommer {
+	border-color: #0000FF;
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+}
+.jegkommerkanskje {
+	border-color: #9999FF;
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+}
+.headerBackground {
+	border:none;
+	padding:0;
+	margin:0;
+}

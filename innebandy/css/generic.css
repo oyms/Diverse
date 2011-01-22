@@ -1,0 +1,8 @@
+.headerBackground {
+	background-image:url(images/BackgroundHeaderGeneric.jpg);
+}
+.topOfForm {
+	background-image: url(images/Drikkeflaske.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}

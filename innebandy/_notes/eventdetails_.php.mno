@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<info>
+	<infoitem key="UD_PlayerInfo" value="name:id;datatype:int,name:firstName;datatype:string,name:lastName;datatype:string,name:number;datatype:string,name:residence;datatype:string,name:phone;datatype:string,name:email;datatype:string,name:age;datatype:datetime,name:notes;datatype:blob" />
+	<infoitem key="UD_MyAnswerSelect" value="name:id;datatype:int,name:event;datatype:int,name:player;datatype:int,name:type;datatype:int,name:notes;datatype:blob" />
+	<infoitem key="UD_attentionType" value="name:id;datatype:int,name:type;datatype:string,name:value;datatype:real" />
+	<infoitem key="UD_EventInfo" value="name:dateStart;datatype:datetime,name:dateEnd;datatype:datetime,name:location;datatype:string,name:description;datatype:blob,name:type;datatype:int,name:cancelled;datatype:int,name:notes;datatype:blob" />
+	<infoitem key="UD_MaxId" value="name:MAX(id);datatype:int" />
+</info>

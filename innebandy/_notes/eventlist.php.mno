@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<info>
+	<infoitem key="UD_Events" value="name:id;datatype:int,name:dateStart;datatype:datetime,name:dateEnd;datatype:datetime,name:location;datatype:string,name:description;datatype:blob,name:type;datatype:int,name:cancelled;datatype:int,name:notes;datatype:blob" />
+	<infoitem key="UD_myAnswer" value="name:id;datatype:int,name:type;datatype:int" />
+	<infoitem key="UD_myAnswers" value="name:id;datatype:int,name:type;datatype:int" />
+	<infoitem key="UD_eventTypes" value="name:id;datatype:int,name:type;datatype:string,name:requiredCount;datatype:int" />
+</info>

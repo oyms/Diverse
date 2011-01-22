@@ -1,0 +1,16 @@
+DirectoryIndex index.php
+addtype image/vnd.wap.wbmp wbmp
+addtype text/vnd.wap.wml wml
+
+#Om feil på site; fjern kommentar under.
+#redirect temp /innebandy http://skaar.freeshell.org/innebandyfeil.html
+
+AuthUserFILE /www/nz/s/skaar/.innebpass
+AuthGroupFILE /dev/null
+AuthNAME "Innebandy"
+AuthTYPE Basic
+require valid-user
+<limit PUT>
+order allow,deny
+allow from all
+</limit>

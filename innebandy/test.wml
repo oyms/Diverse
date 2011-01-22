@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN"
+"http://www.WAPforum.org/DTD/wml_1.1.xml">
+<wml>
+<card id="card1" title="card 1">
+<p>
+Text preceding the table.
+</p>
+<p>
+<table title="Table Example" columns="3" align="C">
+<tr>
+<td>Row 1 Col 1</td>
+<td>Row 1 Col 2</td>
+<td>Row 1 Col 3</td>
+</tr>
+<tr>
+<td>Row 2 Col 1</td>
+<td>Row 2 Col 2</td>
+<td>Row 2 Col 3</td>
+</tr>
+</table>
+</p>
+<p>
+Text following the table.
+</p>
+</card>
+</wml>
