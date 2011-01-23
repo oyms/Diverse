@@ -101,7 +101,7 @@ function Redirect($to,$code=301){
  * @param boolean $bEmulate_imap_8bit
  * @return string
  */
-function quoted_printable_encode($sText,$bEmulate_imap_8bit=true) {
+function encodeQuotedPrintable($sText,$bEmulate_imap_8bit=true) {
   // split text into lines
   $aLines=explode(chr(13).chr(10),$sText);
 
@@ -315,7 +315,7 @@ function IcalLink(){
 	$player = new Player_class();
 	$playerId = $player->getId();
 	$url=HOMEURL."$icalGeneratorFilename?player=$playerId";
-	$output.="webcal://$url";
+	$output="webcal://$url";
 	$output= "<link rel=\"alternate\" type=\"text/calendar\" title=\"Kalender\" href=\"{$output}\" />";
 	return $output;
 }
@@ -383,16 +383,16 @@ function NorwegianTextNumbers($number, $ordinals = false, $intetkj = false,$html
 	}else{
 		$ordinalNumbers = array(
 			0 => "neppe",
-			1 => "første", 2 => "andre",  3=> "tredje",
+			1 => "fï¿½rste", 2 => "andre",  3=> "tredje",
 			4 => "fjerde", 5 => "femte", 6 => "sjette",
-			7 => "syvende", 8 => "åttende", 9 => "niende",
+			7 => "syvende", 8 => "ï¿½ttende", 9 => "niende",
 			10 => "tiende", 11 => "ellevte", 12 => "tolvte"
 		);
 		$regularNumbers = array(
 			0 => "ingen",
-			1 => "én", 2 => "to",  3=> "tre",
+			1 => "ï¿½n", 2 => "to",  3=> "tre",
 			4 => "fire", 5 => "fem", 6 => "seks",
-			7 => "syv", 8 => "åtte", 9 => "ni",
+			7 => "syv", 8 => "ï¿½tte", 9 => "ni",
 			10 => "ti", 11 => "ellve", 12 => "tolv"
 		);
 	}
@@ -597,7 +597,7 @@ function norDate ($dateValue, $textualDate=false, $html=true) {
 	$sameYear = (abs(time()-$dateStamp)<(60*60*24*300));
 	$norDays = $html?
 		array('mandag','tirsdag','onsdag','torsdag','fredag','l&oslash;rdag','s&oslash;ndag'):
-		array('mandag','tirsdag','onsdag','torsdag','fredag','lørdag','søndag');
+		array('mandag','tirsdag','onsdag','torsdag','fredag','lï¿½rdag','sï¿½ndag');
 
 	if($sameDay && ($hours < 16)){
 		$returnVal = "i dag (".$norDays[strftime ("%u",$dateStamp)-1].")";
@@ -647,14 +647,14 @@ function norTime($timeStampValue,$html=true){
 		5 => "fem over ",
 		10 => "ti over ",
 		15 => "kvart over ",
-		20 => "ti på halv ",
-		25 => "fem på halv ",
+		20 => "ti pï¿½ halv ",
+		25 => "fem pï¿½ halv ",
 		30 => "halv ",
 		35 => "fem over halv ",
 		40 => "ti over halv ",
-		45 => "kvart på ",
-		50 => "ti på ",
-		55 => "fem på "
+		45 => "kvart pï¿½ ",
+		50 => "ti pï¿½ ",
+		55 => "fem pï¿½ "
 		);
 	$out = $strings[$minutes].NorwegianTextNumbers($hours, false, true,$html);
 	return $out;
@@ -841,7 +841,7 @@ class EditorOfEvent_class {
 				
 				$editDateString = RecentDateTime($log[$lastIndex]['date'],$log[$lastIndex]['hoursOld'],$html);
 				
-				$out .= $html?"<br>Den ble sist endret ":" Den ble sist endret ";
+				$out .= $html?"<br>Den ble sist endret ":"\nDen ble sist endret ";
 				if($editDateString == $createDateString){
 					$out .= "samme dag";
 				}else{
@@ -962,11 +962,11 @@ function RecentDate($date,$html=true){
 			$hoursDisplay = "";
 		}
 		if ($days == 1){
-			$daysDisplay =$html? "i g&aring;r":"i går";
+			$daysDisplay =$html? "i g&aring;r":"i gï¿½r";
 		}elseif($days == 0){
 			$daysDisplay = "i dag";
 		}elseif($days == 2){
-			$daysDisplay = $html?"i forig&aring;rs":"i forigårs";
+			$daysDisplay = $html?"i forig&aring;rs":"i forigï¿½rs";
 		}else{
 			$daysDisplay = norDate($date,true,$html);
 			$isRecent = false;
@@ -1164,10 +1164,10 @@ class DBConnector_class {
 	*/
 	function _errorInQuery(){
 		$errorString = "Feilmelding: ".mysql_error();
-		$errorString .= "\nSiste spørring: ".$this->queryString;
+		$errorString .= "\nSiste spï¿½rring: ".$this->queryString;
 		$errorStringClean = htmlentities($errorString,ENT_QUOTES);
 		$output  = "\n<p>Det er problemer med databasen.</p>\n";
-		$output .= "<p><a title='$errorStringClean'href='javascript:location.reload();'>Forsøk igjen om du vil.</a></p>\n";
+		$output .= "<p><a title='$errorStringClean'href='javascript:location.reload();'>Forsï¿½k igjen om du vil.</a></p>\n";
 		$output .= "\n---\n";
 		$output .= "<hr/>\n";
 		$output .= $errorStringClean;
@@ -1900,7 +1900,7 @@ class Remedies_class{
 	* @return string
 	* @param int $neededValue
 	* @param string $preString
-	* @desc Returns the string "Noen må ha med " + list of remedies
+	* @desc Returns the string "Noen mï¿½ ha med " + list of remedies
 	*/
 	function GetStringDescribingNeed($neededValue, $preString = " Noen m&aring; ha med ",$html=true){
 		$out = "";

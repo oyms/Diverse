@@ -1,16 +1,14 @@
 <?php
-
+//ini_set("display_errors",1);
+//error_reporting(E_ALL);
  // Because this script sends out HTTP header information, the first characters in the file must be the <? PHP tag.
 
 
 header("Cache-Control: no-cache");
-
 header("Pragma: no-cache");
-
 header("Expires: 0");
 
 require_once('notify.inc');
-
 require_once('commonCode.inc');
 
 
@@ -156,7 +154,7 @@ $icalLink
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<meta http-equiv="author" content="Øyvind Skaar" />
+<meta http-equiv="author" content="ï¿½yvind Skaar" />
 
 </head>
 

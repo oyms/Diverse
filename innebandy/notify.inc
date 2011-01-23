@@ -12,8 +12,7 @@ $AllGroups = mysql_query($query_AllGroups, $innebandybase) or die(mysql_error())
 $row_AllGroups = mysql_fetch_assoc($AllGroups);
 $totalRows_AllGroups = mysql_num_rows($AllGroups);
 
-/* Finner navn på team */
-
+/* Finner navn pï¿½ team */
 $authUserName=$_SERVER['PHP_AUTH_USER'];
 
 mysql_select_db($database_innebandybase, $innebandybase);
@@ -35,12 +34,12 @@ $replyVariants = mysql_query($query_replyVariants, $innebandybase) or die(mysql_
 $totalRows_replyVariants = mysql_num_rows($replyVariants);
 
 $attentionIndex=0;
-do {
-	$attentionTypes[$attentionIndex]['id']=$row_replyVariants['id'];
-	$attentionTypes[$attentionIndex]['type']=$row_replyVariants['type'];
-	$attentionTypes[$attentionIndex]['shortName']=$row_replyVariants['shortName'];
-	$attentionIndex++;
-} while ($row_replyVariants = mysql_fetch_assoc($replyVariants)); 
+ while ($row_replyVariants = mysql_fetch_assoc($replyVariants));  {
+    $attentionTypes[$attentionIndex]['id']=$row_replyVariants['id'];
+    $attentionTypes[$attentionIndex]['type']=$row_replyVariants['type'];
+    $attentionTypes[$attentionIndex]['shortName']=$row_replyVariants['shortName'];
+    $attentionIndex++;
+}
 
 mysql_free_result($replyVariants);
 
@@ -99,7 +98,7 @@ do {
 
 	
 	
-	/* Om noen hendelser er kandidat for påminnelse */
+	/* Om noen hendelser er kandidat for pï¿½minnelse */
 	while ($row_NextEvent = mysql_fetch_assoc($NextEvent)) {
 		
 		$eventId=$row_NextEvent['id'];
@@ -210,21 +209,21 @@ Hei $row_AllPlayers[firstName]!
 
 $row_NextEvent[notes]
 
-Du har ikke svart på http://$email_mainUrl 
+Du har ikke svart pï¿½ http://$email_mainUrl 
 (brukernavn: $row_AllGroups[userName], passord: $row_AllGroups[password]) 
-om du har anledning til å komme eller ikke.
+om du har anledning til ï¿½ komme eller ikke.
 
 
 
-På denne siden kan du også reservere deg mot å få disse 
-påminnelsene, eller slette deg selv helt fra sidene. 
-Klikk knappen *Redigere/slette min info* på
-venstresiden i bildet for å gjøre dette.
+Pï¿½ denne siden kan du ogsï¿½ reservere deg mot ï¿½ fï¿½ disse 
+pï¿½minnelsene, eller slette deg selv helt fra sidene. 
+Klikk knappen *Redigere/slette min info* pï¿½
+venstresiden i bildet for ï¿½ gjï¿½re dette.
 
 
 $underline
 (Om du kan lese dette, er det antagelig fordi e-postleseren din
-ikke forstår html. Resten av e-posten vil derfor være tilnærmet
+ikke forstï¿½r html. Resten av e-posten vil derfor vï¿½re tilnï¿½rmet
 uleselig.)
 $underline
 					
@@ -315,7 +314,7 @@ $underline
 					<a name="notes1"></a>N&aring;r du har lagt inn ditt svar, kan du laste ned
 					en kalenderfil fra siden. Denne kan lagres i kalenderen din i Outlook eller
 					Notes. </p>
-					<p><a name="notes2" id="notes2"></a>N&aring; kan du reservere deg mot e-postp&aring;minnelser ved å klikke
+					<p><a name="notes2" id="notes2"></a>N&aring; kan du reservere deg mot e-postp&aring;minnelser ved ï¿½ klikke
 					  knappen &laquo;<em>Redigere/Slette min info</em>&raquo; i
 					spillerlisten. Her kan du ogs&aring; slette deg selv fra sidene fullstendig.</p>
 					<p><a name="notes3" id="notes3"></a>Microsoft har kommet med en oppdatering til Microsoft
@@ -347,7 +346,7 @@ EOF
 		
 		mysql_free_result($AllPlayers);
 		
-		/* Registrere i hendelsen at påminnelse er sendt */
+		/* Registrere i hendelsen at pï¿½minnelse er sendt */
 		UpdateEvent($eventId);
 	}
 	mysql_free_result($NextEvent); 

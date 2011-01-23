@@ -163,7 +163,7 @@ function GetAttendees($eventId){
 		$outString .= ":".$homePageUrl;
 	}
 	$outString .= "\n";
-	$outString .= "CONTACT;ENCODING=QUOTED-PRINTABLE:".quoted_printable_encode($organizerCommonName)."\n";
+	$outString .= "CONTACT;ENCODING=QUOTED-PRINTABLE:".encodeQuotedPrintable($organizerCommonName)."\n";
 	
 	
 	return $outString;
@@ -192,14 +192,14 @@ TZNAME:CEST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-SUMMARY;ENCODING=QUOTED-PRINTABLE;LANGUAGE=NO-BOK:<?php echo quoted_printable_encode(trim($eventName)) . "\n"; ?>
-DESCRIPTION;ENCODING=QUOTED-PRINTABLE;LANGUAGE=NO-BOK:<?php echo quoted_printable_encode(trim($eventDescription)) . "\n"; ?>
-LOCATION;ENCODING=QUOTED-PRINTABLE:<?php echo quoted_printable_encode(trim($eventLocation)) . "\n"; ?>
+SUMMARY;ENCODING=QUOTED-PRINTABLE;LANGUAGE=NO-BOK:<?php echo encodeQuotedPrintable(trim($eventName)) . "\n"; ?>
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE;LANGUAGE=NO-BOK:<?php echo encodeQuotedPrintable(trim($eventDescription)) . "\n"; ?>
+LOCATION;ENCODING=QUOTED-PRINTABLE:<?php echo encodeQuotedPrintable(trim($eventLocation)) . "\n"; ?>
 DTSTART;TZID=Europe/Oslo:<?php echo $eventStart . "\n"; ?>
 DTEND;TZID=Europe/Oslo:<?php echo $eventEnd . "\n"; ?>
 <?php echo $eventAttendeesString ; ?>
 <?php echo $eventUrl; ?>
-CATEGORIES;ENCODING=QUOTED-PRINTABLE:<?php echo quoted_printable_encode($eventCategories) . "\n"; ?>
+CATEGORIES;ENCODING=QUOTED-PRINTABLE:<?php echo encodeQuotedPrintable($eventCategories) . "\n"; ?>
 CLASS: PRIVATE
 PRIORITY:3
 URL: <?php echo $homePageUrl . "\n"; ?>
